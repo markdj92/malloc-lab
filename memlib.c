@@ -17,7 +17,8 @@
 /* private variables */
 static char *mem_start_brk;  /* points to first byte of heap */
 static char *mem_brk;        /* points to last byte of heap */
-static char *mem_max_addr;   /* largest legal heap address */ 
+static char *mem_max_addr;   /* largest legal heap address */
+
 
 /* 
  * mem_init - initialize the memory system model
@@ -47,13 +48,13 @@ void mem_deinit(void)
  */
 void mem_reset_brk()
 {
-    mem_brk = mem_start_brk;
+    mem_brk = mem_start_brk;/*brk 값은 새로 할당한 메모리 블록의 시작 주소이다.*/
 }
 
 /* 
- * mem_sbrk - simple model of the sbrk function. Extends the heap 
- *    by incr bytes and returns the start address of the new area. In
- *    this model, the heap cannot be shrunk.
+ * mem_sbrk - sbrk()함수는 C 프로그래밍 언어에서 동적으로 메모리를 할당하거나 해제하는 데 사용되는 메모리 관리 함수이다. 이 모델에서 sbrk()함수는 incr 바이트 만큼 힙을 확장하고
+ 새 영역의 시작주소를 반환한다. sbrk()함수를 호출하면, 요정한 메모리(incr 바이트)만큼 힙의 크리가 증가한다. 이 새로운 메모리 영역은 힙의 끝에 추가된다. sbrk함수가 호출될 때마다.
+ 힙은 계속해서 커진다. 이 모델에서heap이 출소될 수 없다는 가정이 있다.
  */
 void *mem_sbrk(int incr) 
 {
