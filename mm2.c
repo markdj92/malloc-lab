@@ -13,11 +13,11 @@
  ********************************************************/
 team_t team = {
     /* Team name */
-    "Green 1 team",
+    "Green 2 team",
     /* First member's full name */
-    "Lee Yang Sang",
+    "kim tae young",
     /* First member's email address */
-    "ysl960330@gmail.com",
+    "markdj9205@gmail.com",
     /* Second member's full name (leave blank if none) */
     "",
     /* Second member's email address (leave blank if none) */
